@@ -367,7 +367,8 @@
                 },
                 onSuccess: (data) => {
                     document.getElementById('contactForm').style.display = 'none';
-                    // Link actualizado al nuevo nombre del repositorio: Dossier
+                    document.querySelector('[data-fs-success]').style.display = 'block';
+                    // Link actualizado al nombre del repositorio: Dossier
                     window.open('https://raw.githubusercontent.com/patrickAUS2021/Dossier/main/Executive%20Dossier%20-%20Patricio%20FdF.pdf', '_blank');
 
                     setTimeout(() => {
@@ -379,6 +380,7 @@
                 onError: () => {
                     document.getElementById('btn-spinner').style.display = 'none';
                     document.querySelector('.btn-text').style.display = 'block';
+                    document.querySelector('[data-fs-error]').style.display = 'block';
                 }
             });
         });
