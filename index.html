@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bio Profesional - Patricio Ferrer de Frankenberg</title>
+    
+    <title>Patricio Ferrer de Frankenberg | Executive Dossier</title>
+    <meta name="description" content="Program & Project Manager especializado en Soluciones ICT y Transformación SAP.">
+    
+    <meta property="og:title" content="Patricio Ferrer de Frankenberg - Dossier Ejecutivo">
+    <meta property="og:description" content="Program & Project Manager | ICT Solutions | PMP®">
+    <meta property="og:image" content="TU_URL_DE_FOTO_DE_LINKEDIN"> 
+    <meta property="og:url" content="https://patrickaus2021.github.io/Dossier/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
     <style>
         /* --- VARIABLES --- */
         :root {
@@ -230,7 +241,7 @@
         <a href="https://www.linkedin.com/in/patricio-ferrer/" target="_blank" class="social-link" title="LinkedIn">
             <img src="https://cdn.simpleicons.org/linkedin/002349" alt="LinkedIn" style="width: 32px;">
         </a>
-        <a href="https://wa.me/TUNUMERO" target="_blank" class="social-link" title="WhatsApp">
+        <a href="https://wa.me/TU_NUMERO_AQUI?text=Hola%20Patricio,%20estuve%20viendo%20tu%20Dossier%20Ejecutivo%20y%20me%20gustaría%20conectar." target="_blank" class="social-link" title="WhatsApp">
             <img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp" style="width: 32px;">
         </a>
         <div class="social-link" title="Formulario de Contacto" id="btn-open-form">
@@ -323,7 +334,6 @@
     </div>
 
     <script>
-        // --- MODO OSCURO ---
         const darkModeBtn = document.getElementById('dark-mode-toggle');
         if (localStorage.getItem('theme') === 'dark') { document.body.classList.add('dark-mode'); }
         darkModeBtn.addEventListener('click', () => {
@@ -331,7 +341,6 @@
             localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
         });
 
-        // --- LÓGICA MODAL ---
         const modal = document.getElementById("contactModal");
         const btnOpen = document.getElementById("btn-open-form");
         const btnClose = document.getElementById("btn-close-modal");
@@ -348,24 +357,19 @@
             document.querySelector('.btn-text').style.display = 'block';
         }
 
-        // --- INICIALIZACIÓN FORMSPREE CON REDIRECCIÓN A PDF ---
         document.addEventListener('DOMContentLoaded', () => {
             formspree('initForm', { 
                 formElement: '#contactForm', 
                 formId: 'mpqoropg',
                 onFetch: () => {
-                    // Activar Spinner
                     document.getElementById('btn-spinner').style.display = 'block';
                     document.querySelector('.btn-text').style.display = 'none';
                 },
                 onSuccess: (data) => {
-                    // 1. Ocultar formulario
                     document.getElementById('contactForm').style.display = 'none';
-                    
-                    // 2. ABRIR EL PDF DESDE GITHUB (LINK CONFIRMADO)
-                    window.open('https://raw.githubusercontent.com/patrickAUS2021/executive-dossier/main/Executive%20Dossier%20-%20Patricio%20FdF.pdf', '_blank');
+                    // Link actualizado al nuevo nombre del repositorio: Dossier
+                    window.open('https://raw.githubusercontent.com/patrickAUS2021/Dossier/main/Executive%20Dossier%20-%20Patricio%20FdF.pdf', '_blank');
 
-                    // 3. Cerrar el modal después de mostrar el éxito por 5 segundos
                     setTimeout(() => {
                         modal.style.display = "none";
                         resetUI();
@@ -373,7 +377,6 @@
                     }, 5000);
                 },
                 onError: () => {
-                    // Restaurar botón si hay error de red
                     document.getElementById('btn-spinner').style.display = 'none';
                     document.querySelector('.btn-text').style.display = 'block';
                 }
